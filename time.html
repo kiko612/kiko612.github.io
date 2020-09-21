@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+    <!-- Open Sans from Google Webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <!-- Main styles file -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Icons via Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <title>倒计时</title>
+    <style>
+        h1 {
+            font-size:50px;
+            color: black;
+        }
+        .lead{
+            color: black;
+        }
+        .countdown.large .time{
+            color: black;
+            font-weight: bold;
+        }
+
+        .countdown.large .time.hours{
+            font-size: 35px;
+        }
+
+        .countdown.large .time.minutes{
+            font-size: 30px;
+        }
+
+        .countdown.large .time.seconds{
+            font-size: 30px;
+        }
+
+        .countdown.large .unit{
+            font-size: 20px;
+            top: 100px
+        }
+    </style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div class="row" style="margin-top: 20px">
+        <div class="col-xl-6 border-right border-bottom border-dark">
+            <div class="splash">
+                <div class="">
+                    <div class="text-center">
+                        <!-- Main header -->
+                        <h1>2021年全国硕士研究生入学考试倒计时</h1>
+                        <!-- Sub header -->
+                        <p class="lead">初试时间：2020年12月26日</p>
+
+                        <!-- Countdown -->
+                        <div class="countdown circled large">
+                            <div class = "c1">
+                            <!-- Days -->
+                            <div class="time days">
+                                <div class="value">00</div>
+                                <div class="unit">Days</div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="time hours">
+                                <div class="value">00</div>
+                                <div class="unit">Hours</div>
+                            </div>
+                            <!-- Minutes -->
+                            <div class="time minutes">
+                                <div class="value">00</div>
+                                <div class="unit">Minutes</div>
+                            </div>
+                            <!-- Seconds -->
+                            <div class="time seconds">
+                                <div class="value">00</div>
+                                <div class="unit">Seconds</div>
+                            </div></div>
+                        </div>
+                        <!-- Countdown end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 border-bottom border-dark">
+            <div class="splash">
+                <div class="">
+                    <div class="text-center">
+                        <!-- Main header -->
+                        <h1>2020年全国大学生电子设计竞赛倒计时</h1>
+                        <!-- Sub header -->
+                        <p class="lead">比赛时间：2020年10月10日</p>
+                        <!-- Countdown -->
+                        <div class="countdown circled large">
+                            <div class = "c2">
+                            <!-- Days -->
+                            <div class="time days">
+                                <div class="value">00</div>
+                                <div class="unit">Days</div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="time hours">
+                                <div class="value">00</div>
+                                <div class="unit">Hours</div>
+                            </div>
+                            <!-- Minutes -->
+                            <div class="time minutes">
+                                <div class="value">00</div>
+                                <div class="unit">Minutes</div>
+                            </div>
+                            <!-- Seconds -->
+                            <div class="time seconds">
+                                <div class="value">00</div>
+                                <div class="unit">Seconds</div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Countdown end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 border-right border-dark">
+            <div class="splash">
+                <div class="">
+                    <div class="text-center">
+                        <!-- Main header -->
+                        <h1>2020年大学生软件杯设计竞赛倒计时</h1>
+                        <!-- Sub header -->
+                        <p class="lead">报名截止时间：2020年9月30日</p>
+
+                        <!-- Countdown -->
+                        <div class="countdown circled large">
+                            <div class = "c3">
+                            <!-- Days -->
+                            <div class="time days">
+                                <div class="value">00</div>
+                                <div class="unit">Days</div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="time hours">
+                                <div class="value">00</div>
+                                <div class="unit">Hours</div>
+                            </div>
+                            <!-- Minutes -->
+                            <div class="time minutes">
+                                <div class="value">00</div>
+                                <div class="unit">Minutes</div>
+                            </div>
+                            <!-- Seconds -->
+                            <div class="time seconds">
+                                <div class="value">00</div>
+                                <div class="unit">Seconds</div>
+                            </div></div>    
+                        </div>
+                        <!-- Countdown end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="splash">
+                <div class="">
+                    <div class="text-center">
+                        <!-- Main header -->
+                        <h1>2020年嵌入式芯片与系统设计竞赛倒计时</h1>
+                        <!-- Sub header -->
+                        <p class="lead">提交时间：2020年11月16日</p>
+
+                        <!-- Countdown -->
+                        <div class="countdown circled large">
+                            <div class = "c4">
+                            <!-- Days -->
+                            <div class="time days">
+                                <div class="value">00</div>
+                                <div class="unit">Days</div>
+                            </div>
+                            <!-- Hours -->
+                            <div class="time hours">
+                                <div class="value">00</div>
+                                <div class="unit">Hours</div>
+                            </div>
+                            <!-- Minutes -->
+                            <div class="time minutes">
+                                <div class="value">00</div>
+                                <div class="unit">Minutes</div>
+                            </div>
+                            <!-- Seconds -->
+                            <div class="time seconds">
+                                <div class="value">00</div>
+                                <div class="unit">Seconds</div>
+                            </div></div>
+                        </div>
+                        <!-- Countdown end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/bezierCanvas.js"></script>
+    <script src="js/notifyMe.js"></script>
+
+    <script type="text/javascript">
+        $().ready(function() {
+            // Activate countdownTimer plugin on a '.countdown' element
+            $(".c1").countdownTimer({
+                // Set the end date for the countdown
+                endTime: new Date("December 26, 2020 00:00:00 UTC+0800")
+            });
+            // Activate notifyMe plugin on a '#notifyMe' element
+            $("#notifyMe").notifyMe();
+            // Activate bezierCanvas plugin on a #bg-canvas element
+            $("#bg-canvas").bezierCanvas({
+                maxStyles: 10,
+                maxLines: 100,
+                lineSpacing: 1,
+                colorBase: {
+                    r: 100,
+                    g: 100,
+                    b: 100
+                },
+                colorVariation: {
+                    r: 150,
+                    g: 120,
+                    b: 150
+                },
+                delayVariation: 0.5,
+                globalAlpha: 0.5,
+                globalSpeed: 500,
+            });
+            // Add handler on 'Scroll down to learn more' link
+            $().ready(function() {
+                $(".overlap .more").click(function(e) {
+                    e.preventDefault();
+                    $("body,html").animate({
+                        scrollTop: $(window).height()
+                    });
+                });
+            });
+        });
+
+
+
+
+
+
+
+
+        $().ready(function() {
+
+            // Activate countdownTimer plugin on a '.countdown' element
+            $(".c2").countdownTimer({
+                // Set the end date for the countdown
+                endTime: new Date("Octomber 10, 2020 00:00:00 UTC+0800")
+            });
+
+
+            // Activate notifyMe plugin on a '#notifyMe' element
+            $("#notifyMe").notifyMe();
+
+
+            // Activate bezierCanvas plugin on a #bg-canvas element
+            $("#bg-canvas").bezierCanvas({
+                maxStyles: 10,
+                maxLines: 100,
+                lineSpacing: 1,
+                colorBase: {
+                    r: 100,
+                    g: 100,
+                    b: 100
+                },
+                colorVariation: {
+                    r: 150,
+                    g: 120,
+                    b: 150
+                },
+                delayVariation: 0.5,
+                globalAlpha: 0.5,
+                globalSpeed: 500,
+            });
+
+            // Add handler on 'Scroll down to learn more' link
+            $().ready(function() {
+                $(".overlap .more").click(function(e) {
+                    e.preventDefault();
+                    $("body,html").animate({
+                        scrollTop: $(window).height()
+                    });
+                });
+            });
+
+
+        });
+
+        
+        $().ready(function() {
+
+// Activate countdownTimer plugin on a '.countdown' element
+$(".c3").countdownTimer({
+    // Set the end date for the countdown
+    endTime: new Date("September 30, 2020 00:00:00 UTC+0800")
+});
+
+
+// Activate notifyMe plugin on a '#notifyMe' element
+$("#notifyMe").notifyMe();
+
+
+// Activate bezierCanvas plugin on a #bg-canvas element
+$("#bg-canvas").bezierCanvas({
+    maxStyles: 10,
+    maxLines: 100,
+    lineSpacing: 1,
+    colorBase: {
+        r: 100,
+        g: 100,
+        b: 100
+    },
+    colorVariation: {
+        r: 150,
+        g: 120,
+        b: 150
+    },
+    delayVariation: 0.5,
+    globalAlpha: 0.5,
+    globalSpeed: 500,
+});
+
+// Add handler on 'Scroll down to learn more' link
+$().ready(function() {
+    $(".overlap .more").click(function(e) {
+        e.preventDefault();
+        $("body,html").animate({
+            scrollTop: $(window).height()
+        });
+    });
+});
+
+
+});
+
+
+$().ready(function() {
+
+// Activate countdownTimer plugin on a '.countdown' element
+$(".c4").countdownTimer({
+    // Set the end date for the countdown
+    endTime: new Date("November 16, 2020 00:00:00 UTC+0800")
+});
+
+
+// Activate notifyMe plugin on a '#notifyMe' element
+$("#notifyMe").notifyMe();
+
+
+// Activate bezierCanvas plugin on a #bg-canvas element
+$("#bg-canvas").bezierCanvas({
+    maxStyles: 10,
+    maxLines: 100,
+    lineSpacing: 1,
+    colorBase: {
+        r: 100,
+        g: 100,
+        b: 100
+    },
+    colorVariation: {
+        r: 150,
+        g: 120,
+        b: 150
+    },
+    delayVariation: 0.5,
+    globalAlpha: 0.5,
+    globalSpeed: 500,
+});
+
+// Add handler on 'Scroll down to learn more' link
+$().ready(function() {
+    $(".overlap .more").click(function(e) {
+        e.preventDefault();
+        $("body,html").animate({
+            scrollTop: $(window).height()
+        });
+    });
+});
+
+
+});
+    </script>
+</body>
+</html>
