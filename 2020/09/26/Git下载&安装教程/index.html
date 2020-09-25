@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Git下载&amp;安装教程 | Kiko's Blog</title><meta name="description" content="Git下载地址：https:&#x2F;&#x2F;git-scm.com&#x2F;downloads  （国外网站，下载较慢）  清华源下载：https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;git-for-windows&#x2F;     二、安装过程  1. 下载完成后，双击下载好的软件开始安装，出现如下对话框      2.   2. 点击Next，默认选项和图中不一样，建议按照图中修改，Git Bash Her"><meta name="keywords" content="GitHub"><meta name="author" content="Gungnir Kiko,guchenlong0612@gmail.com"><meta name="copyright" content="Gungnir Kiko"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/favicon.png"><link rel="canonical" href="http://kiko612.github.io/2020/09/26/Git%E4%B8%8B%E8%BD%BD&amp;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Git下载&amp;安装教程"><meta property="og:url" content="http://kiko612.github.io/2020/09/26/Git%E4%B8%8B%E8%BD%BD&amp;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"><meta property="og:site_name" content="Kiko's Blog"><meta property="og:description" content="Git下载地址：https:&#x2F;&#x2F;git-scm.com&#x2F;downloads  （国外网站，下载较慢）  清华源下载：https:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;git-for-windows&#x2F;     二、安装过程  1. 下载完成后，双击下载好的软件开始安装，出现如下对话框      2.   2. 点击Next，默认选项和图中不一样，建议按照图中修改，Git Bash Her"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1592058788010.jpeg"><meta property="article:published_time" content="2020-09-25T16:12:23.727Z"><meta property="article:modified_time" content="2020-09-25T16:23:55.570Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"limitCount":50,"languages":{"author":"作者: Gungnir Kiko","link":"链接: ","source":"来源: Kiko's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-09-26 00:23:55'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.3/source/css/Lete.css"><script data-pjax src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.1/source/js/Lete.js"></script><meta name="generator" content="Hexo 5.0.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/friend_404.gif" onerror="onerror=null;src='null'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fa fa-paper-plane"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1592058788010.jpeg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Kiko's Blog</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fa fa-paper-plane"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Git下载&amp;安装教程</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-25T16:12:23.727Z" title="发表于 2020-09-26 00:12:23">2020-09-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-25T16:23:55.570Z" title="更新于 2020-09-26 00:23:55">2020-09-26</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>Git下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>  （国外网站，下载较慢）</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/Git_001.png"></p>
+<p>清华源下载：<a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a>   </p>
+<p><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/Git_002.png"></p>
+<p>二、安装过程<br>  1. 下载完成后，双击下载好的软件开始安装，出现如下对话框<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC04ODZkNDU3OTViYzliMTNhLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>      2.   2. 点击Next，默认选项和图中不一样，建议按照图中修改，Git Bash Here和Git GUI Here可以方便的在任意目录下打开git，建议选中，选中这两项后Additional icons-&gt;On the Desktop就按照自己心情了。<br>        <img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC1jNzNkMTllYTFiN2YwZjM4LnBuZw?x-oss-process=image/format,png" alt="image.png"><br>          <strong>这一步根据自己需要设置后，不爱折腾的小伙伴下面的步骤可以直接采用默认选项，当然也可以详细研究选择最适合自己的。</strong></p>
+<p>  3. 点击next,选择默认编辑器，我选择的是Notepad++。<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC04Njc3YzEyYWIzOWEwMDQwLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  4. 继续next,配置PATH环境。<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC00MzUxYzczMzdhYjM5YTMxLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  Use Git from Git Bash only：这是最安全的选择，因为你的PATH根本不会被修改，你只能使用Git Bash的Git命令行工具。<br>  Use Git from the Windows Command Prompt：这个选项被认为是安全的，它只向PATH添加一些最小的Git包，以避免使用可选的Unix工具混淆环境。你将能够从Git Bash和Windows命令提示符中使用Git。建议选择此项。<br>  Use Git and optional Unix tools from the Windows Command Prompt：Git和可选的Unix工具都将添加到计算机的PATH中。警告：这将覆盖Windows工具，如“find”和“sort”，只有在了解其含义后才使用此选项。</p>
+<pre><code>  5. 继续next，**以下选项均为默认**。
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC03N2QyMWMwZmEzMzYxYzNjLnBuZw?x-oss-process=image/format,png)
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC03NGUxZTUzMTEwNjkxMjllLnBuZw?x-oss-process=image/format,png)
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC1iMWFjZjkwMTk3MWFmNmM2LnBuZw?x-oss-process=image/format,png)
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC01ZmJlMzBjNGE1MDdlYjMwLnBuZw?x-oss-process=image/format,png)
+       点击Inall开始安装，安装完成后点击Finish即可。
+       在开始菜单里点击“Git“Git Bash”，弹出类似命令行的窗口，就说明Git安装成功！
+       在任意目录下右击，可以看到右键菜单中有Git GUI Here和Git Bash Here两个选项。
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC1hYWU4MTZmNGFkYmY2YzlkLnBuZw?x-oss-process=image/format,png)
+     \##三、安装后的设置
+       安装完成后需要设置自己的git账号和邮箱，否则无法正确使用，但是到目前为止还没有申请git账号，下面就来说一下具体的账号申请和git设置过程。点击[账号申请网址](https://github.com/) ，出现如下界面。
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC01YTc2NDMwZWM2YmMyZGM0LnBuZw?x-oss-process=image/format,png)
+       输入自己想要的账户名，自己的邮箱和密码，账户名只能包含字母和数字字符或者是单个连字符“-”并且连字符不可以作为开头或者结尾；密码中至少包含一个字母，一个数字，并且长度不小于7个字符。输入完成后后点击“Sign up for Github”，进入如下界面，同时注册用的邮箱中会收到一封GitHub的邮件。
+     ![image.png](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC0wNDliZDczNTM3ZDkyNDhhLnBuZw?x-oss-process=image/format,png)
+       通过验证后点击“Create an account”</code></pre>
+<p><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC03MDNlNDc1ZDUxYWE5ZGNlLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  如果不需要保密，选择默认的免费选项即可，如果需要保密则需要付费。<br>  点击Continue，出现无关紧要的答题，选选就好，之后Submit，搞定。<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC0zMzVmNjUzMWZmOTBhMGFmLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。账号申请完成后，打开命令行或者Git Bash，输入<br>  git config –global user.name “Your Name”，之后回车，再输入<br>  git config –global user.email <a href="mailto:&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#x61;&#x69;&#108;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a><br>  其中Your Name和<a href="mailto:&#101;&#109;&#97;&#105;&#108;&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;">&#101;&#109;&#97;&#105;&#108;&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#x6d;</a>替换成上面注册时的账户名和邮箱。<br>  命令行下输入和Git Bash下输入均可。<br>  命令行下输入如图：<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC01YTZkMDYyNDJjMDc0ZjcyLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  Git Bash下输入如图：<br><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMzk0NjA2MC0zMTEyOThkNGVhZDQ3NzllLnBuZw?x-oss-process=image/format,png" alt="image.png"><br>  到这一步，Git的安装设置就基本结束了，可以在</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:guchenlong0612@gmail.com">Gungnir Kiko</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://kiko612.github.io/2020/09/26/Git%E4%B8%8B%E8%BD%BD&amp;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">http://kiko612.github.io/2020/09/26/Git%E4%B8%8B%E8%BD%BD&amp;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://kiko612.github.io" target="_blank">Kiko's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/GitHub/">GitHub</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1592058788010.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/09/25/GitHub%E4%BB%93%E5%BA%93%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E4%B8%8A%E4%BC%A0/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1570441541432.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/kiko612/imgs/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GitHub仓库的建立和上传</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/09/25/GitHub仓库的建立和上传/" title="GitHub仓库的建立和上传"><img class="relatedPosts_cover" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1570441541432.jpeg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-25</div><div class="relatedPosts_title">GitHub仓库的建立和上传</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i> Gungnir Kiko</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: '1qtzDVVaUoijC8zv1wWlkMVd-MdYXbMMI',
+      appKey: 'NywE1yFOk57HEcGcApi0Dz2i',
+      placeholder: '建议使用QQ邮箱，评论头像采用QQ头像',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}
+
+  window.valine = new Valine({
+  el:'#vcomment',
+  master:'',
+  friends:'',
+  appId: '1qtzDVVaUoijC8zv1wWlkMVd-MdYXbMMI',
+  appKey: 'NywE1yFOk57HEcGcApi0Dz2i',
+  placeholder: '建议使用QQ邮箱，评论头像采用QQ头像',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields,
+  emojiMaps: {
+            "1":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/1.gif",
+            "001":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/001.png",
+            "002":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/002.png",
+            "003":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/003.png",
+            "004":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/004.png",
+            "005":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/005.png",
+            "006":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/006.png",
+            "007":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/103.jpg",
+            "008":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/104.jpg",
+            "009":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/105.jpg",
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            
+        }
+});</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
