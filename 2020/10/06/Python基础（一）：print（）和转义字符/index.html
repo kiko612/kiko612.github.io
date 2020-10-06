@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python基础（一）：print（）和转义字符 | Kiko's Blog</title><meta name="description" content="print()函数的使用·print（）函数可以输出哪些？​    ·输出的内容可以是数字 ​    ·输出的内容可以是字符串 ​    ·输出的内容可以是含有运算符的表达式 ·print（）函数将内容输出的目的地​    ·显示器 ​    ·文件 ·print（）函数输出的格式​    ·换行 ​    ·不换行 e.g.  ​        print（520） ​        print"><meta name="keywords" content="python"><meta name="author" content="Gungnir Kiko,guchenlong0612@gmail.com"><meta name="copyright" content="Gungnir Kiko"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/favicon.png"><link rel="canonical" href="http://kiko612.github.io/2020/10/06/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aprint%EF%BC%88%EF%BC%89%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Python基础（一）：print（）和转义字符"><meta property="og:url" content="http://kiko612.github.io/2020/10/06/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aprint%EF%BC%88%EF%BC%89%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"><meta property="og:site_name" content="Kiko's Blog"><meta property="og:description" content="print()函数的使用·print（）函数可以输出哪些？​    ·输出的内容可以是数字 ​    ·输出的内容可以是字符串 ​    ·输出的内容可以是含有运算符的表达式 ·print（）函数将内容输出的目的地​    ·显示器 ​    ·文件 ·print（）函数输出的格式​    ·换行 ​    ·不换行 e.g.  ​        print（520） ​        print"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1593691508827.jpeg"><meta property="article:published_time" content="2020-10-06T12:46:09.246Z"><meta property="article:modified_time" content="2020-10-06T17:04:27.430Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: {"limitCount":50,"languages":{"author":"作者: Gungnir Kiko","link":"链接: ","source":"来源: Kiko's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-10-07 01:04:27'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.3/source/css/Lete.css"><script data-pjax src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.1/source/js/Lete.js"></script><meta name="generator" content="Hexo 5.0.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/friend_404.gif" onerror="onerror=null;src='null'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fa fa-paper-plane"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#print-%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">print()函数的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%C2%B7print%EF%BC%88%EF%BC%89%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%BE%93%E5%87%BA%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">·print（）函数可以输出哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%C2%B7print%EF%BC%88%EF%BC%89%E5%87%BD%E6%95%B0%E5%B0%86%E5%86%85%E5%AE%B9%E8%BE%93%E5%87%BA%E7%9A%84%E7%9B%AE%E7%9A%84%E5%9C%B0"><span class="toc-number">1.2.</span> <span class="toc-text">·print（）函数将内容输出的目的地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%C2%B7print%EF%BC%88%EF%BC%89%E5%87%BD%E6%95%B0%E8%BE%93%E5%87%BA%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">·print（）函数输出的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%B7%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">·转义字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%C2%B7%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">·什么是转义字符？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%C2%B7%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">2.2.</span> <span class="toc-text">·为什么要转义字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%AD%97%E7%AC%A6%EF%BC%8C%E4%B8%8D%E5%B8%8C%E6%9C%9B%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%B5%B7%E4%BD%9C%E7%94%A8%EF%BC%8C%E5%B0%B1%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%AD%97%E7%AC%A6%EF%BC%8C%E5%B0%B1%E6%98%AF%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E5%89%8D%E5%8A%A0%E4%B8%8Ar%E6%88%96R"><span class="toc-number">2.3.</span> <span class="toc-text">原字符，不希望字符串中的转义字符起作用，就使用原字符，就是在字符串之前加上r或R</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1593691508827.jpeg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Kiko's Blog</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 媒体</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/bangumis/"><i class="fa-fw fab fa-youtube"></i><span> 番剧</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书单</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/box/"><i class="fa-fw fa fa-paper-plane"></i><span> 聚宝盒</span></a></div><div class="menus_item"><a class="site-page" href="/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw far fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Python基础（一）：print（）和转义字符</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-06T12:46:09.246Z" title="发表于 2020-10-06 20:46:09">2020-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-06T17:04:27.430Z" title="更新于 2020-10-07 01:04:27">2020-10-07</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="print-函数的使用"><a href="#print-函数的使用" class="headerlink" title="print()函数的使用"></a>print()函数的使用</h3><h4 id="·print（）函数可以输出哪些？"><a href="#·print（）函数可以输出哪些？" class="headerlink" title="·print（）函数可以输出哪些？"></a>·print（）函数可以输出哪些？</h4><p>​    ·输出的内容可以是数字</p>
+<p>​    ·输出的内容可以是字符串</p>
+<p>​    ·输出的内容可以是含有运算符的表达式</p>
+<h4 id="·print（）函数将内容输出的目的地"><a href="#·print（）函数将内容输出的目的地" class="headerlink" title="·print（）函数将内容输出的目的地"></a>·print（）函数将内容输出的目的地</h4><p>​    ·显示器</p>
+<p>​    ·文件</p>
+<h4 id="·print（）函数输出的格式"><a href="#·print（）函数输出的格式" class="headerlink" title="·print（）函数输出的格式"></a>·print（）函数输出的格式</h4><p>​    ·换行</p>
+<p>​    ·不换行</p>
+<p>e.g. </p>
+<p>​        print（520）</p>
+<p>​        print(98.5)</p>
+<p>​        print(‘Hello’)  #一定要加引号（“ ”，‘ ’），告诉计算机不需要理解，只要输出就行</p>
+<p>​        print(3+1) #3,1叫做操作数，+叫做运算符，由操作数和运算符组成的叫做表达式</p>
+<p>将数据输出到文件当中</p>
+<p>open（‘D：/text.txt’,’a+’） #a+:以读写的方式添加到文本当中，文本如果不存在，就创建；存在就添加</p>
+<p>fp=open（‘D：/text.txt’,’a+’）</p>
+<p>print(‘Hello’,tp)</p>
+<p>tp.close()</p>
+<p>结果：text.txt无内容</p>
+<p>第二行修改：print(‘Hello’,file=tp)</p>
+<p>注意：1.要指定的盘是否存在；2.记得使用‘file=’</p>
+<p>不进行换行输出(输出内容全在一行中)</p>
+<p>print(‘hello’,’world’,’python’)</p>
+<h3 id="·转义字符"><a href="#·转义字符" class="headerlink" title="·转义字符"></a>·转义字符</h3><h4 id="·什么是转义字符？"><a href="#·什么是转义字符？" class="headerlink" title="·什么是转义字符？"></a>·什么是转义字符？</h4><p>​    ·就是反斜杠（\）+想要实现的转移功能的首字母</p>
+<h4 id="·为什么要转义字符"><a href="#·为什么要转义字符" class="headerlink" title="·为什么要转义字符"></a>·为什么要转义字符</h4><p>​    ·当字符串中包含反斜杠、单引号、双引号等特殊用途的字符时，必须使用反斜杠对这些字符进行转义（转换一个含义）</p>
+<p>​        反斜杠：\\</p>
+<p>​        单引号：\‘</p>
+<p>​        双引号：\“</p>
+<p>​    ·当字符串包含换行、回车、水平制表符或退格等无法直接表示等特殊符号时；也可以用转义字符串包含换行、回车、水平制表符或退格等无法直接表示等特殊符号时，也可以使用转义字符</p>
+<p>​        换行：\n</p>
+<p>​        回车：\r</p>
+<p>​        水平制表符：\t</p>
+<p>​        退格：\b</p>
+<p>e.g.</p>
+<p>​        print(‘hello\nworld’) #n–&gt;newline</p>
+<p>​        print(‘hello\tworld’) #\t 是一个4个字符的空格  hello   world</p>
+<p>​        print(‘helloooo\tworld’)</p>
+<p><img src= "https://cdn.jsdelivr.net/gh/kiko612/imgs/img/loading.gif" data-lazy-src="C:\Users\KIKO\AppData\Roaming\Typora\typora-user-images\image-20201004214653044.png" alt="image-20201004214653044"></p>
+<p>hell是一个制表位，第二个制表位只用了一个‘o’，剩下的都给了\t</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;hello\rworld&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>world    #world对hello进行了覆盖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;hello\bworld&#39;)</span><br></pre></td></tr></table></figure>
+
+<p>hellworld    #\b是退一格，将o退没了</p>
+<h4 id="原字符，不希望字符串中的转义字符起作用，就使用原字符，就是在字符串之前加上r或R"><a href="#原字符，不希望字符串中的转义字符起作用，就使用原字符，就是在字符串之前加上r或R" class="headerlink" title="原字符，不希望字符串中的转义字符起作用，就使用原字符，就是在字符串之前加上r或R"></a>原字符，不希望字符串中的转义字符起作用，就使用原字符，就是在字符串之前加上r或R</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(r&#39;hello\nworld&#39;)</span><br><span class="line">#hello\nworld</span><br></pre></td></tr></table></figure>
+
+<p>#注意事项：使用原字符时，最后一个字符不能是反斜杠，但可以是俩个反斜杠</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(r&#39;hello\tworld\&#39;)        ×，会报错</span><br><span class="line">print(r&#39;hello\tworld\\&#39;)    √</span><br></pre></td></tr></table></figure></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:guchenlong0612@gmail.com">Gungnir Kiko</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://kiko612.github.io/2020/10/06/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aprint%EF%BC%88%EF%BC%89%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/">http://kiko612.github.io/2020/10/06/Python%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Aprint%EF%BC%88%EF%BC%89%E5%92%8C%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://kiko612.github.io" target="_blank">Kiko's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1593691508827.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/09/26/Git%E4%B8%8B%E8%BD%BD&amp;%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/1592058788010.jpeg" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/kiko612/imgs/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git下载&amp;安装教程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i> Gungnir Kiko</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: '1qtzDVVaUoijC8zv1wWlkMVd-MdYXbMMI',
+      appKey: 'NywE1yFOk57HEcGcApi0Dz2i',
+      placeholder: '建议使用QQ邮箱，评论头像采用QQ头像',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}
+
+  window.valine = new Valine({
+  el:'#vcomment',
+  master:'',
+  friends:'',
+  appId: '1qtzDVVaUoijC8zv1wWlkMVd-MdYXbMMI',
+  appKey: 'NywE1yFOk57HEcGcApi0Dz2i',
+  placeholder: '建议使用QQ邮箱，评论头像采用QQ头像',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'zh-CN',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields,
+  emojiMaps: {
+            "1":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/1.gif",
+            "001":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/001.png",
+            "002":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/002.png",
+            "003":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/003.png",
+            "004":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/004.png",
+            "005":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/005.png",
+            "006":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/006.png",
+            "007":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/103.jpg",
+            "008":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/104.jpg",
+            "009":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/105.jpg",
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            "010":"https://cdn.jsdelivr.net/gh/lete114/CDN/emoji/106.gif"
+            
+        }
+});</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
