@@ -1,0 +1,139 @@
+:root{
+  --six: 50px;
+  width: 1920px;
+}
+
+ul,ol {
+  list-style: none;
+}
+
+*{
+  padding: 0;
+  text-align: center;
+  margin:auto;
+}
+
+nav{
+  height: var(--six);
+}
+
+img{
+  margin: inherit;
+  width: 100%
+}
+
+.title1{
+  height: var(--six);
+}
+
+.title3>li {
+  height: 50px;
+  float: left;
+  width: 200px;
+  line-height: 30px;
+  transition: 1s;
+  text-align: center;
+  background-color:rgba(66,66,66,0.2);
+}
+
+.title3>a {
+  color: white;
+}
+
+.title3{
+  height: var(--six);
+}
+
+.title3>li>a:hover{
+  background-color: orange;
+}
+
+.title2{
+  width: 600px;
+}
+
+.table1{
+  width: 1200px;
+}
+
+.title2>li {
+  height: var(--six);
+  width: 100px;
+  float: left;
+  line-height: var(--six);
+}
+
+.title2>li>a:hover{
+  color: red;
+}
+
+.title1>ul{
+  height: var(--six);
+  width: 1200px;
+  margin:auto;
+  text-align: center;
+  background-color:black;
+}
+
+.title1>ul>li {
+  height: var(--six);
+  width: 120px;
+  float: left;
+  line-height: var(--six);
+}
+
+.table2 p{
+  text-align: center;
+  transition: 1s;
+  text-decoration: none;
+}
+
+.table2 {
+  width: 1200px;
+  height: 400px;
+  text-align: center;
+}
+
+.table2 td{
+    width: 25%;
+    border: 1px solid black;
+}
+
+.table2 a{
+  width: auto;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+}
+
+.table2 img:hover{
+  box-shadow: 3px 0px 5px #210603,
+              -3px 0px 5px #210603,
+              0px 3px 5px #210603,
+              0px -3px 5px #210603;
+}
+
+.table2 img{
+  width: 290px;
+}
+
+a{
+  color: gray;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover{
+  color: white;
+}
+
+.hand:hover{
+  height: 440px;
+  width: 790px;
+  cursor: pointer;
+}
+
+.sbody1{
+  width: 1200px;
+  background-color: lightgray;
+}

@@ -1,392 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang='en'>
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/css/styles.css" />
-    <!-- Modernizr -->
-    <script src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/js/modernizr.js"></script>
-    <!-- Open Sans from Google Webfonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <!-- Main styles file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/css/styles.css" />
-    <!-- Icons via Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/kiko612/imgs/img/favicon.png">
-    <title>倒计时</title>
-    <style>
-        h1 {
-            font-size:50px;
-            color: black;
-        }
-        .lead{
-            color: black;
-        }
-        .countdown.large .time{
-            color: black;
-            font-weight: bold;
-        }
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    <meta charset='utf-8'>
+    <title>Web前端课程设计</title>
+    <!--  Disable screen scaling-->
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0'>
+    <meta name='author' content='HighHay.com digital agency'>
+    <meta name='description' content='EN COURS, a responsive Coming Soon Template'>
+    <!-- Load webfonts -->
+    <link rel='stylesheet' href='./work/css/stylesheet.css' type='text/css' media='all'>
+    
+    <!-- Load normalize css -->
+    <link rel='stylesheet' type='text/css' href='./work/css/normalize.css' />
+    <!-- Load css -->
+    <link rel='stylesheet' type='text/css' href='./work/css/foundation.min.css' />
+	
+	<style>
+    body, header, h2, h3, h4, h5,p{     
+        font-family: 'montserrat_bold';
+    }
+    body{    
+        background: #f4f5f8;
+        background: url('./work/img/clock.jpg');
 
-        .countdown.large .time.hours{
-            font-size: 35px;
-        }
-
-        .countdown.large .time.minutes{
-            font-size: 30px;
-        }
-
-        .countdown.large .time.seconds{
-            font-size: 30px;
-        }
-
-        .countdown.large .unit{
-            font-size: 20px;
-            top: 100px
-        }
-    </style>
-</head>
-<body>
-<canvas id="bg-canvas"></canvas>
-<div class="row" style="margin-top: 20px">
-        <div class="col-xl-6 border-right border-bottom border-dark">
-            <div class="splash">
-                <div class="">
-                    <div class="text-center">
-                        <!-- Main header -->
-                        <h1>2021年全国硕士研究生入学考试倒计时</h1>
-                        <!-- Sub header -->
-                        <p class="lead">初试时间：2020年12月26日</p>
-
-                        <!-- Countdown -->
-                        <div class="countdown circled large">
-                            <div class = "c1">
-                            <!-- Days -->
-                            <div class="time days">
-                                <div class="value">00</div>
-                                <div class="unit">Days</div>
-                            </div>
-                            <!-- Hours -->
-                            <div class="time hours">
-                                <div class="value">00</div>
-                                <div class="unit">Hours</div>
-                            </div>
-                            <!-- Minutes -->
-                            <div class="time minutes">
-                                <div class="value">00</div>
-                                <div class="unit">Minutes</div>
-                            </div>
-                            <!-- Seconds -->
-                            <div class="time seconds">
-                                <div class="value">00</div>
-                                <div class="unit">Seconds</div>
-                            </div></div>
-                        </div>
-                        <!-- Countdown end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6 border-bottom border-dark">
-            <div class="splash">
-                <div class="">
-                    <div class="text-center">
-                        <!-- Main header -->
-                        <h1>2020年全国大学生电子设计竞赛倒计时</h1>
-                        <!-- Sub header -->
-                        <p class="lead">比赛截止时间：2020年10月13日20：00</p>
-                        <!-- Countdown -->
-                        <div class="countdown circled large">
-                            <div class = "c2">
-                            <!-- Days -->
-                            <div class="time days">
-                                <div class="value">00</div>
-                                <div class="unit">Days</div>
-                            </div>
-                            <!-- Hours -->
-                            <div class="time hours">
-                                <div class="value">00</div>
-                                <div class="unit">Hours</div>
-                            </div>
-                            <!-- Minutes -->
-                            <div class="time minutes">
-                                <div class="value">00</div>
-                                <div class="unit">Minutes</div>
-                            </div>
-                            <!-- Seconds -->
-                            <div class="time seconds">
-                                <div class="value">00</div>
-                                <div class="unit">Seconds</div>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- Countdown end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xl-6 border-right border-dark">
-            <div class="splash">
-                <div class="">
-                    <div class="text-center">
-                        <!-- Main header -->
-                        <h1>2020年大学生软件杯设计竞赛倒计时</h1>
-                        <!-- Sub header -->
-                        <p class="lead">比赛截止时间：2020年10月16日</p>
-
-                        <!-- Countdown -->
-                        <div class="countdown circled large">
-                            <div class = "c3">
-                            <!-- Days -->
-                            <div class="time days">
-                                <div class="value">00</div>
-                                <div class="unit">Days</div>
-                            </div>
-                            <!-- Hours -->
-                            <div class="time hours">
-                                <div class="value">00</div>
-                                <div class="unit">Hours</div>
-                            </div>
-                            <!-- Minutes -->
-                            <div class="time minutes">
-                                <div class="value">00</div>
-                                <div class="unit">Minutes</div>
-                            </div>
-                            <!-- Seconds -->
-                            <div class="time seconds">
-                                <div class="value">00</div>
-                                <div class="unit">Seconds</div>
-                            </div></div>    
-                        </div>
-                        <!-- Countdown end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="splash">
-                <div class="">
-                    <div class="text-center">
-                        <!-- Main header -->
-                        <h1>2020年嵌入式芯片与系统设计竞赛倒计时</h1>
-                        <!-- Sub header -->
-                        <p class="lead">提交时间：2020年11月16日</p>
-
-                        <!-- Countdown -->
-                        <div class="countdown circled large">
-                            <div class = "c4">
-                            <!-- Days -->
-                            <div class="time days">
-                                <div class="value">00</div>
-                                <div class="unit">Days</div>
-                            </div>
-                            <!-- Hours -->
-                            <div class="time hours">
-                                <div class="value">00</div>
-                                <div class="unit">Hours</div>
-                            </div>
-                            <!-- Minutes -->
-                            <div class="time minutes">
-                                <div class="value">00</div>
-                                <div class="unit">Minutes</div>
-                            </div>
-                            <!-- Seconds -->
-                            <div class="time seconds">
-                                <div class="value">00</div>
-                                <div class="unit">Seconds</div>
-                            </div></div>
-                        </div>
-                        <!-- Countdown end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/js/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/js/countdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/js/bezierCanvas.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/kiko612/CDN@1.4/source/js/notifyMe.js"></script>
-
-    <script type="text/javascript">
-        $().ready(function() {
-            // Activate countdownTimer plugin on a '.countdown' element
-            $(".c1").countdownTimer({
-                // Set the end date for the countdown
-                endTime: new Date("December 26, 2020 00:00:00 UTC+0800")
-            });
-            // Activate notifyMe plugin on a '#notifyMe' element
-            $("#notifyMe").notifyMe();
-            // Activate bezierCanvas plugin on a #bg-canvas element
-            $("#bg-canvas").bezierCanvas({
-                maxStyles: 10,
-                maxLines: 100,
-                lineSpacing: 1,
-                colorBase: {
-                    r: 100,
-                    g: 100,
-                    b: 100
-                },
-                colorVariation: {
-                    r: 150,
-                    g: 120,
-                    b: 150
-                },
-                delayVariation: 0.5,
-                globalAlpha: 0.5,
-                globalSpeed: 500,
-            });
-            // Add handler on 'Scroll down to learn more' link
-            $().ready(function() {
-                $(".overlap .more").click(function(e) {
-                    e.preventDefault();
-                    $("body,html").animate({
-                        scrollTop: $(window).height()
-                    });
-                });
-            });
-        });
-
-        $().ready(function() {
-
-            // Activate countdownTimer plugin on a '.countdown' element
-            $(".c2").countdownTimer({
-                // Set the end date for the countdown
-                endTime: new Date("Octomber 13, 2020 20:00:00 UTC+0800")
-            });
-
-
-            // Activate notifyMe plugin on a '#notifyMe' element
-            $("#notifyMe").notifyMe();
-
-
-            // Activate bezierCanvas plugin on a #bg-canvas element
-            $("#bg-canvas").bezierCanvas({
-                maxStyles: 10,
-                maxLines: 100,
-                lineSpacing: 1,
-                colorBase: {
-                    r: 100,
-                    g: 100,
-                    b: 100
-                },
-                colorVariation: {
-                    r: 150,
-                    g: 120,
-                    b: 150
-                },
-                delayVariation: 0.5,
-                globalAlpha: 0.5,
-                globalSpeed: 500,
-            });
-
-            // Add handler on 'Scroll down to learn more' link
-            $().ready(function() {
-                $(".overlap .more").click(function(e) {
-                    e.preventDefault();
-                    $("body,html").animate({
-                        scrollTop: $(window).height()
-                    });
-                });
-            });
-
-
-        });
-
+        background-repeat: no-repeat; 
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .all{
         
-        $().ready(function() {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:0;
+    }
+    header{   
+        width: 100%;
+        position: relative;
+    }
+    img{
+        width: 100%;   
+    }
+    header h2{
+        
+        background: rgba(51, 51, 51, 0.83);
+        max-width: 65rem;
+        margin: auto;
+        font-size: 1.75em;        
+        font-family: 'OpenSans-Light';
+        padding-top: 0.45em;
+        padding-bottom: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        color: #f4f5f8;
+        display: block;   
+        
+        
+        letter-spacing: -0.1rem;  
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        
+    }
+    .select{
+        margin-bottom: 1rem; 
+        margin-top: 1rem; 
+        color: #fff;
+    font-family: 'OpenSans-ExtraBold';
+        
+        letter-spacing: -0.1rem;  
+/*         font-family: 'OpenSans';*/
+    }
+    .aresp{ 
+    }
+    span.marked{
+       color: #fff;
+    font-family: 'OpenSans-ExtraBold';
+    }
+    .d-window{
+        position: absolute;
+        width: 100%;
+        top: 60px;
+/*
+        top:50%;
+        margin-top: -13.6rem;
+*/
+        
+    }
+    .d-window .cont{
+        max-width: 65rem;
+        margin: auto;
+        position: relative;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        background: rgba(47, 47, 47, 0.4);
+        
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);   
+    }
+    ul, li{
+        list-style: none;
+    }
+    ul li{
+        margin-bottom: 1rem;   
+    }
+    ul li a{
+        box-sizing: border-box;
+        display: block;
+        padding: 0.7rem;
+        background: #fff;
+        
+        -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+            0 2px 2px rgba(0,0,0,0.2),
+            0 0 4px 1px rgba(0,0,0,0.1);
+        border-radius: 0.2rem;
+    
+    }
+    ul li a h4{
+        font-family: 'OpenSans-ExtraBold';
+        color: #575d69;
+        font-size: 1em;
+        padding-top: 0.5rem;
+        text-transform: uppercase; 
+        
+        letter-spacing: -1px;  
+    }
+    ul li a{        
+        -ms-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+    ul li a:hover{
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    footer{
+        text-align: center;
+        color:#333;
+    font-family: 'OpenSans-ExtraBold';
+        letter-spacing: -1px; 
+    }
+    footer a:visited,
+    footer a:hover,
+    footer a{
+        color:#0f305c;
+    }
+    @media screen and (max-width: 640px) {
+        header h2{
+            font-size: 1.2rem;   
+        }
+        .d-window{
+            position: absolute;
+            width: 100%;
+            top:0;
+            margin-top: 0;
 
-// Activate countdownTimer plugin on a '.countdown' element
-$(".c3").countdownTimer({
-    // Set the end date for the countdown
-    endTime: new Date("Octomber 16, 2020 00:00:00 UTC+0800")
-});
+        }
+        .select{
+            font-size: 1.2rem;
+        }
+        .column, .columns {
+            position: relative;
+            padding-left: 0.7rem;
+            padding-right: 0.7rem;
+        }
+    }
+</style>
+</head>
 
+<body>
+    <section class='all'>
 
-// Activate notifyMe plugin on a '#notifyMe' element
-$("#notifyMe").notifyMe();
+        <div class='d-window'>
+            <div class='cont'>                
+                <header class=' text-center'>
+                    <h2><span class='marked'>Web前端课程设计</span><span class='aresp'> -*-*- author by <2018027237_顾陈龙> -*-*- </span></h2>
+                </header>
+                
+                <h3 class='text-center select' >- 请选择一个网页进入 - </h3>
+                <ul class='row'>
+                    <li class='columns medium-6 small-6'>
+                        <a href='store.html'>
+                            <div>
+                                <img src='./work/img/bc2.jpg' alt='Default'>
+                            </div>
+                            <h4 class='text-center'><font color='red'>电商官网</font></h4>
+                        </a>
+                    </li>
+					
+                    <li class='columns medium-6 small-6'>
+                        <a href='school.html' >
+                            <div>
+                                <img src='./work/img/pic2.png' alt='Custom'>
+                            </div>
+                            <h4 class='text-center'><font color='red'>学校官网</font></h4>
+                        </a>
+                    </li>
+                    
 
+                </ul>
+                
+                <footer>
+                    The author of this page is <a href='http://www.kiko612.com'>2018027237_顾陈龙</a>
+                </footer>
+            </div>
+            
 
-// Activate bezierCanvas plugin on a #bg-canvas element
-$("#bg-canvas").bezierCanvas({
-    maxStyles: 10,
-    maxLines: 100,
-    lineSpacing: 1,
-    colorBase: {
-        r: 100,
-        g: 100,
-        b: 100
-    },
-    colorVariation: {
-        r: 150,
-        g: 120,
-        b: 150
-    },
-    delayVariation: 0.5,
-    globalAlpha: 0.5,
-    globalSpeed: 500,
-});
-
-// Add handler on 'Scroll down to learn more' link
-$().ready(function() {
-    $(".overlap .more").click(function(e) {
-        e.preventDefault();
-        $("body,html").animate({
-            scrollTop: $(window).height()
-        });
-    });
-});
-
-
-});
-
-
-$().ready(function() {
-
-// Activate countdownTimer plugin on a '.countdown' element
-$(".c4").countdownTimer({
-    // Set the end date for the countdown
-    endTime: new Date("November 16, 2020 00:00:00 UTC+0800")
-});
-
-
-// Activate notifyMe plugin on a '#notifyMe' element
-$("#notifyMe").notifyMe();
-
-
-// Activate bezierCanvas plugin on a #bg-canvas element
-$("#bg-canvas").bezierCanvas({
-    maxStyles: 10,
-    maxLines: 100,
-    lineSpacing: 1,
-    colorBase: {
-        r: 100,
-        g: 100,
-        b: 100
-    },
-    colorVariation: {
-        r: 150,
-        g: 120,
-        b: 150
-    },
-    delayVariation: 0.5,
-    globalAlpha: 0.5,
-    globalSpeed: 500,
-});
-
-// Add handler on 'Scroll down to learn more' link
-$().ready(function() {
-    $(".overlap .more").click(function(e) {
-        e.preventDefault();
-        $("body,html").animate({
-            scrollTop: $(window).height()
-        });
-    });
-});
-
-
-});
-    </script>
+        </div>
+    </section>
+    
 </body>
 </html>
